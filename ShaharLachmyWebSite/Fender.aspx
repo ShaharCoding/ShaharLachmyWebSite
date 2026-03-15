@@ -5,16 +5,24 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" Runat="Server">
     <div>
-        <h1>Fender Guitar models</h1>
+        <h1 style="text-align: center">Fender Guitar models</h1>
     </div>
-    <div>
-        <h2>The Stratocaster</h2>
-       <a href="strat.aspx"> <img src="Images/Strat.png" width="200"/>
-    </a>
-           </div>
-    <div>
-        <h2>The Telecaster</h2>
-            <img src="Images/Tele.png" width="300"/>
+    <div class="GuitarRow">
+        <div class="GuitarType">
+             <h2>The Stratocaster</h2>
+             <a href="strat.aspx"> <img src="Images/Strat.png" width="430"/>
+             </a>
+        </div>
+    
+         <div class="GuitarType">
+             <h2>The Telecaster</h2>
+               <a href="tele.aspx"> <img src="Images/Tele.png" width="460"/> </a>
+        </div>
+
+         <div class="GuitarType">
+            <h2>The Jazzmaster</h2>
+             <a href="jazz.aspx">  <img src="Images/Jazzmaster.png" width="300"/> </a>
+        </div>
     </div>
 
 </asp:Content>

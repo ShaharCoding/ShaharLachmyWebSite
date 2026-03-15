@@ -65,3 +65,11 @@ aside {
 footer {
     background-color: orange;
 }
+.GuitarRow {
+    display: flex;
+    justify-content: center;
+}
+
+.GuitarType {
+    text-align: center; 
+}
