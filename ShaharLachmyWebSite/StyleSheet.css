@@ -1,5 +1,5 @@
 ﻿html {
-    direction: rtl;
+    direction: ltr;
 }
 
 header, .center, footer {
@@ -10,11 +10,14 @@ header, .center, footer {
 header {
     background-color: white;
     margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 .header_top {
     min-height: 20px;
     display: flex;
+    flex: 1;
 }
 
 
