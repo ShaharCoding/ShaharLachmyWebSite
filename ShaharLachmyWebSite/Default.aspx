@@ -12,9 +12,15 @@
         Whether you’re into rock, blues, metal, or just exploring, we’ll help you understand what to look for so you can pick a guitar that feels comfortable, sounds great, and inspires you to play. 
         Your first guitar is the start of your musical journey — and this site is here to guide you every step of the way.</p>
     <div>
-    <p>“When the power of love overcomes the love of power, the world will know peace.” - Jimi Hendrix</p>
-        <img width="200" src="Images/Jimi.jpg">
+    
+       <a href="https://youtu.be/cJunCsrhJjg?si=LrpFzBxK2UNCxGln" target="_blank"> <img width="250" src="Images/Jimi.jpg"></a>
+        <p>Click on the photo for an inspiring video</p>
+        <p>“When the power of love overcomes the love of power, the world will know peace.” - Jimi Hendrix</p>
         </div>
+    <div>
+        <img width="200" src="Images/Me.jpg">
+        <p>Im Shahar Lachmy, and I run this website</p>
+    </div>
   
 </asp:Content>
 

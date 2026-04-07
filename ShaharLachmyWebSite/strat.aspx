@@ -12,6 +12,11 @@
         Its lightweight, contoured body makes it easy to hold, especially for beginners, and the tremolo (whammy) bar adds extra expression for bends and vibrato effects. <br> 
         Because the Stratocaster can fit almost any music style, it’s a great choice for new players who want one guitar that can do almost everything.
     </p>
+    <a href="https://intl.fender.com/collections/electric-guitars-stratocaster" target="_blank"><p>For stratocasters in Fender website</p></a>
+    <img width="200" src ="Images/First_strat.jpg">
+    <p>The first stratocaster</p>
+    <img width="200" src ="Images/Leo.jpg">
+    <p>Leo Fender - The stratocaster inventor</p>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderScript" Runat="Server">
