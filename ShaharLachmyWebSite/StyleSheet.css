@@ -73,3 +73,19 @@ footer {
 .GuitarType {
     text-align: center; 
 }
+.header_date {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#DateLabel {
+    flex: 1;
+}
+
+#DayImage {
+    flex: 3;
+    max-width: 60px;
+    height: auto;
+}
+

@@ -19,7 +19,7 @@
         </div>
     <div>
         <img width="200" src="Images/Me.jpg">
-        <p>Im Shahar Lachmy, and I run this website</p>
+        <p>I'm Shahar Lachmy and I run this website</p>
     </div>
   
 </asp:Content>
