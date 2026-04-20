@@ -23,7 +23,9 @@
 			
 		<nav class="main_nav">   	
 			<a href="Default.aspx">Home</a>
-			<a href="Fender.aspx">Fender Guitars</a>				
+			<a href="Fender.aspx">Fender Guitars</a>
+			<a href="Gibson.aspx">Gibson Guitars</a>
+			<a href="PRS.aspx">PRS</a>
 		</nav>
 	</header>
 		
