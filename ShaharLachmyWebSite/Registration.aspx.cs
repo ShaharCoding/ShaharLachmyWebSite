@@ -1,4 +1,5 @@
-﻿using System;
+﻿//לתקן באג בנקודה ושטרודל ולהעביר הודעות לאנגלית
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,7 +17,7 @@ public partial class Registration : System.Web.UI.Page
             if (Form_Validation() && Insert_Into_Database())
             {
                 RegistrationResult.InnerText =
-                        firstName.Value + ", רישום מוצלח, יש לעבור לדף הכניסה.";
+                        firstName.Value + ", רישום מוצלח, יש לעבור לדף הכניסה..";
             }
         }
     }
@@ -78,6 +79,8 @@ public partial class Registration : System.Web.UI.Page
             return false;
         }
 
+
+
         return true;
 
        
@@ -134,6 +137,21 @@ public partial class Registration : System.Web.UI.Page
         // RegistrationResult.InnerText
         // ולהחזיר:
         // return false;
+        string id = idNum.Value;
+
+        if (id.Length != 9)
+        {
+            RegistrationResult.InnerText += "The ID number has to contain exactly 9 charachters.";
+            return false;
+        }
+        for (int i = 0; i < 9; i++)
+        {
+            if (id[i] < '0' || id[i] > '9')
+            {
+                RegistrationResult.InnerText += "The ID number has to contain only numbers.";
+                return false;
+            }
+        }
 
         return true;
     }
@@ -148,6 +166,26 @@ public partial class Registration : System.Web.UI.Page
         // RegistrationResult.InnerText
         // וסיים את הפעולה עם:
         // return false;
+        string Phone_num = phone.Value;
+
+        if (Phone_num.Length != 10)
+        {
+            RegistrationResult.InnerText += "The phone number has to contain exactly 10 charachters.";
+            return false;
+        }
+        for (int i = 0; i < 10; i++)
+        {
+            if (Phone_num[i] < '0' || Phone_num[i] > '9')
+            {
+                RegistrationResult.InnerText += "The phone number has to contain only numbers.";
+                return false;
+            }
+        }
+        if (Phone_num[0] != '0')
+        {
+            RegistrationResult.InnerText += "The first number has to be 0.";
+            return false;
+        } 
 
         return true;
     }
@@ -163,6 +201,42 @@ public partial class Registration : System.Web.UI.Page
         // IndexOf
         // במקרה שאחד התנאים לא מתקיים, הוסף הודעת שגיאה מתאימה והחזר:
         // return false;
+        string Email = mail.Value;
+        bool shtrudel = false;
+        bool dot = false;
+        for (int i = 0; i < Email.Length && (shtrudel == false || dot == false); i++ )
+        {
+            if (Email[i] == '@')
+            {
+                shtrudel = true;
+            }
+            if (Email[i] == '.')
+            {
+                dot = true;
+            }
+        }
+        if (shtrudel == false)
+        {
+            RegistrationResult.InnerText += "The Email has to contain a @.";
+
+            return false;
+
+        }
+        if (dot == false)
+        {
+            RegistrationResult.InnerText += "The Email has to contain a dot.";
+
+            return false;
+
+        }
+        if (dot && shtrudel)
+        {
+            if (Email.IndexOf('@') > Email.IndexOf('.'))
+            {
+                RegistrationResult.InnerText += "The dot has to come after the @.";
+                return false;
+            }
+        }
 
         return true;
     }
