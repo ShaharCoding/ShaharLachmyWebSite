@@ -1,7 +1,9 @@
 ﻿//לתקן באג בנקודה ושטרודל ולהעביר הודעות לאנגלית
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Security.Policy;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -17,7 +19,7 @@ public partial class Registration : System.Web.UI.Page
             if (Form_Validation() && Insert_Into_Database())
             {
                 RegistrationResult.InnerText =
-                        firstName.Value + ", רישום מוצלח, יש לעבור לדף הכניסה..";
+                        firstName.Value + "Registration successful, please go to the login page..";
             }
         }
     }
@@ -41,7 +43,7 @@ public partial class Registration : System.Web.UI.Page
 
         if (fname.Length < 2)
         {
-            RegistrationResult.InnerText += "שם פרטי חייב להכיל לפחות שני תווים. ";
+            RegistrationResult.InnerText += "First name must contain at least two characters.";
             return false;
         }
 
@@ -54,7 +56,7 @@ public partial class Registration : System.Web.UI.Page
 
         if (lname.Length < 2)
         {
-            RegistrationResult.InnerText += "שם משפחה חייב להכיל לפחות שני תווים. ";
+            RegistrationResult.InnerText += "A last name must contain at least two characters.";
             return false;
         }
 
@@ -94,7 +96,7 @@ public partial class Registration : System.Web.UI.Page
         // קוד שמוודא שהסיסמה בין 6 ל-10 תווים בלבד
         if (password.Length < 6 || password.Length > 10)
         {
-            RegistrationResult.InnerText += "הסיסמה חייבת להכיל בין 6 ל-10 תווים. ";
+            RegistrationResult.InnerText += "The password must contain between 6 and 10 characters.";
             return false;
         }
 
@@ -112,14 +114,14 @@ public partial class Registration : System.Web.UI.Page
         }
         if (!letterExist || !numberExist)
         {
-            RegistrationResult.InnerText += "הסיסמה חייבת להכיל אותיות ומספרים. ";
+            RegistrationResult.InnerText += "Password must contain letters and numbers.";
             return false;
         }
 
         // קוד לוידוא סיסמה ווידוא סיסמה זהים
         if (password != pswdV)
         {
-            RegistrationResult.InnerText += "הסיסמה ווידוא הסיסמה אינם זהים. ";
+            RegistrationResult.InnerText += "The password and password confirmation are not the same.";
             return false;
         }
 
@@ -204,17 +206,10 @@ public partial class Registration : System.Web.UI.Page
         string Email = mail.Value;
         bool shtrudel = false;
         bool dot = false;
-        for (int i = 0; i < Email.Length && (shtrudel == false || dot == false); i++ )
-        {
-            if (Email[i] == '@')
-            {
-                shtrudel = true;
-            }
-            if (Email[i] == '.')
-            {
-                dot = true;
-            }
-        }
+        if (Email.IndexOf('@') != -1)
+            shtrudel = true;
+        if (Email.IndexOf('.') != -1)
+            dot = true;
         if (shtrudel == false)
         {
             RegistrationResult.InnerText += "The Email has to contain a @.";
@@ -245,7 +240,7 @@ public partial class Registration : System.Web.UI.Page
     {
         if (!approval.Checked)
         {
-            RegistrationResult.InnerText += "יש לאשר את תקנון האתר. ";
+            RegistrationResult.InnerText += "The site regulations must be approved.";
             return false;
         }
 
@@ -254,8 +249,34 @@ public partial class Registration : System.Web.UI.Page
 
     private bool Insert_Into_Database()
     {
+        string dbPath = this.MapPath("App_Data/Database.mdf");
+        DAL dal = new DAL(dbPath);
+
+        string sqlQuery = "SELECT * FROM Users WHERE user_name = '" + userName.Value + "'";
+        DataTable dt = dal.GetDataTable(sqlQuery);
+
+        if (dt.Rows.Count > 0)
+        {
+            RegistrationResult.InnerText = "שם משתמש קיים במערכת. אנא בחר.י שם אחר.";
+            return false;
+        }
+
+        sqlQuery = "INSERT INTO Users VALUES (" +
+        "'" + firstName.Value + "', " +
+        "'" + lastName.Value + "', " +
+        "'" + userName.Value + "', " +
+        "'" + pswd.Value + "', " +
+        "'" + idNum.Value + "'," +
+        "'" + phone.Value + "'," +
+        "'" + mail.Value + "'," +
+        "'" + Request.Form["gender"] + "'," +
+        "'" + DateTime.Now.ToString("yyyy-MM-dd") + "', 0);";
+
+        dal.UpdateDB(sqlQuery);
+
         return true;
     }
+
 
 
 }
