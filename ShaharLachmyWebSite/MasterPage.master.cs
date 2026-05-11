@@ -22,6 +22,18 @@ public partial class MasterPage : System.Web.UI.MasterPage
             DayImage.AlternateText = "Image for dayOfWeek" + dayOfWeek;
         }
 
+        if ((bool)Session["isLoggedIn"])
+        {
+            LoginLogout.HRef = "Logout.aspx";
+            LoginLogout.InnerText = "שלום, " + Session["userName"] + "(לחץ ליציאה)";
+        }
+        else
+        {
+            LoginLogout.HRef = "Login.aspx";
+            LoginLogout.InnerText = "כניסה";
+        }
+
+
     }
     private string GetImagePathForDay(string dayOfWeek)
     {

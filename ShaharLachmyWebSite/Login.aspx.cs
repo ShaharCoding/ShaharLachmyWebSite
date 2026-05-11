@@ -12,8 +12,8 @@ public partial class Login : System.Web.UI.Page
     {
         if (IsPostBack)
         {
-            string userName = Request.Form["userName"].ToString();
-            string password = Request.Form["pswd"].ToString();
+            string userName = Request.Form["userName"];
+            string password = Request.Form["password"];
 
             int userType = GetUserTypeFromDB(userName, password);
 

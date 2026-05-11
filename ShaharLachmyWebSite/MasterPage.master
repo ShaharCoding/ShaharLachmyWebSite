@@ -26,6 +26,8 @@
 			<a href="Fender.aspx">Fender Guitars</a>
 			<a href="Gibson.aspx">Gibson Guitars</a>
 			<a href="PRS.aspx">PRS</a>
+			<a class="login_logout" ID="LoginLogout" runat="server"></a>		
+
 		</nav>
 	</header>
 		
