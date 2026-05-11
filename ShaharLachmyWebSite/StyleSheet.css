@@ -103,6 +103,15 @@ body {
     margin: 20px;
     background-color: #f9f9f9;
 }
+.adminTable tr:nth-child(even) {
+    background-color: lightgray;
+}
+
+.adminTable, .adminTable th, .adminTable td {
+    border: 1px solid black;
+}
+
+
 
 
 

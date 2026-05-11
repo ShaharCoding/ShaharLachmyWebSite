@@ -5,6 +5,7 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" Runat="Server">
+    <table class="adminTable" ID="adminTable" runat="server"></table>
 </asp:Content>
 
 
