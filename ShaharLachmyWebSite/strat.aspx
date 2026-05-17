@@ -52,6 +52,9 @@
     </div>
 </asp:Content>
 
-<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderScript" Runat="Server">
+<asp:Content ID="ContentFooter9" ContentPlaceHolderID="ContentPlaceHolderFooter" runat="Server">
+    <div class="footer-tip">
+        <strong>Guitar Tip:</strong> Experiment with different picks. Thinner picks are usually better for strumming chords, while thicker picks give you more control for guitar solos.
+    </div>
 </asp:Content>
 

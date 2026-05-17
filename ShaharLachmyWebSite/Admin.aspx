@@ -9,6 +9,9 @@
 </asp:Content>
 
 
-<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderScript" Runat="Server">
+<asp:Content ID="ContentFooter1" ContentPlaceHolderID="ContentPlaceHolderFooter" runat="Server">
+    <div class="footer-tip">
+        <strong>Guitar Tip:</strong> Always tune your guitar before you start playing. A guitar that is even slightly out of tune won't sound right!
+    </div>
 </asp:Content>
 

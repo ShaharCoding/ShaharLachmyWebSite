@@ -26,6 +26,7 @@
     </div>
 
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderScript" Runat="Server">
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderFooter" runat="Server">
+    <p><strong>Guitar Tip:</strong> Always tune your guitar before you start playing!</p>
 </asp:Content>
 

@@ -48,6 +48,9 @@
     </div>
 </asp:Content>
 
-<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderScript" Runat="Server">
+<asp:Content ID="ContentFooter7" ContentPlaceHolderID="ContentPlaceHolderFooter" runat="Server">
+    <div class="footer-tip">
+        <strong>Guitar Tip:</strong> Start slow. When learning a new riff or song, practice it very slowly first until your fingers memorize the movements, then speed up.
+    </div>
 </asp:Content>
 

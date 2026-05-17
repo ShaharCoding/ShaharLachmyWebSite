@@ -5,16 +5,25 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" Runat="Server">
     <div>
-         <h1 style="text-align: center">Fender Guitar models</h1>
+         <h1 style="text-align: center">Gibson Guitar models</h1>
     </div>
-
+     <div class="GuitarRow">
     <div class="GuitarType">
      <h2>Les Paul</h2>
      <a href="Les_Paul.aspx"> <img src="Images/Les_Paul.png" width="430"/>
      </a>
 </div>
+        <div class="GuitarType">
+     <h2>SG</h2>
+     <a href="SG.aspx"> <img src="Images/SG.png" width="200"/>
+     </a>
+</div>
+         </div>
 </asp:Content>
 
-<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderScript" Runat="Server">
+<asp:Content ID="ContentFooter3" ContentPlaceHolderID="ContentPlaceHolderFooter" runat="Server">
+    <div class="footer-tip">
+        <strong>Guitar Tip:</strong> Protect your instrument. Keep your guitar in its case or on a proper stand when you're not playing to avoid accidental drops.
+    </div>
 </asp:Content>
 

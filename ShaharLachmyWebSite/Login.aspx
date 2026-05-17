@@ -20,6 +20,9 @@
 
 </asp:Content>
 
-<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderScript" Runat="Server">
-</asp:Content> 
+<asp:Content ID="ContentFooter6" ContentPlaceHolderID="ContentPlaceHolderFooter" runat="Server">
+    <div class="footer-tip">
+        <strong>Guitar Tip #6:</strong> Keep your fingertips clean and dry. Wipe down your guitar strings with a clean cloth after playing to make them last much longer.
+    </div>
+</asp:Content>
 

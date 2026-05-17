@@ -47,10 +47,13 @@
         </iframe>
 
        
-         <a href=" https://www.gibson.com/collections/gibson-les-paul-electric-guitars" target="_blank"><p>For stratocasters in Fender website</p></a>
+         <a href=" https://www.gibson.com/collections/gibson-les-paul-electric-guitars" target="_blank"><p>For Les Paul guitars in Gibson website</p></a>
     </div>
 </asp:Content>
 
-<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderScript" Runat="Server">
+<asp:Content ID="ContentFooter5" ContentPlaceHolderID="ContentPlaceHolderFooter" runat="Server">
+    <div class="footer-tip">
+        <strong>Guitar Tip:</strong> Don't press too hard. If your fingers hurt, you might be squeezing the neck too tightly. Use just enough pressure to make the note ring clearly.
+    </div>
 </asp:Content>
 
