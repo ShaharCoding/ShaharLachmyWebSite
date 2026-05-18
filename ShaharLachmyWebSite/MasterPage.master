@@ -24,6 +24,7 @@
 			
 		<nav class="main_nav">   	
 			<a href="Default.aspx">Home</a>
+			<a href="Backstage.aspx"   ID="Secret" runat="server">Q&A (For registered only!)</a>
 			<a href="Fender.aspx">Fender Guitars</a>
 			<a href="Gibson.aspx">Gibson Guitars</a>
 			<a href="PRS.aspx">PRS</a>

@@ -26,11 +26,17 @@ public partial class MasterPage : System.Web.UI.MasterPage
         {
             LoginLogout.HRef = "Logout.aspx";
             LoginLogout.InnerText = "שלום, " + Session["userName"] + "(לחץ ליציאה)";
+
+            Secret.HRef = "Backstage.aspx";
+            Secret.InnerText = "Q&A (For registered only!)";
         }
         else
         {
             LoginLogout.HRef = "Login.aspx";
             LoginLogout.InnerText = "כניסה";
+
+            Secret.HRef = "";
+            Secret.InnerText = "";
         }
 
 

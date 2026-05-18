@@ -74,28 +74,28 @@ public partial class _Default : System.Web.UI.Page
         int maxScore = strat;
         string winnerName = "Fender Stratocaster";
         string winnerDesc = "The ultimate classic! Versatile, bright, and perfect for rock, blues, and funk.";
-        string winnerUrl = "Strat.aspx";
+        string winnerUrl = "strat.aspx";
 
         if (lesPaul > maxScore)
         {
             maxScore = lesPaul;
             winnerName = "Gibson Les Paul";
             winnerDesc = "Thick, warm, and powerful. The king of classic rock and hard rock.";
-            winnerUrl = "LesPaul.aspx";
+            winnerUrl = "Les_Paul.aspx";
         }
         if (tele > maxScore)
         {
             maxScore = tele;
             winnerName = "Fender Telecaster";
             winnerDesc = "Simple, tough, and twangy. Amazing for country, indie, and raw rock.";
-            winnerUrl = "Telecaster.aspx";
+            winnerUrl = "tele.aspx";
         }
         if (jazz > maxScore)
         {
             maxScore = jazz;
             winnerName = "Fender Jazzmaster";
             winnerDesc = "Offset and unique. The go-to choice for indie, grunge, and alternative players.";
-            winnerUrl = "Jazzmaster.aspx";
+            winnerUrl = "jazz.aspx";
         }
         if (prs > maxScore)
         {
