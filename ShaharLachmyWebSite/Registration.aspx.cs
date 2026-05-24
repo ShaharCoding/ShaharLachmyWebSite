@@ -77,7 +77,7 @@ public partial class Registration : System.Web.UI.Page
 
         if (uName.Length < 3 || uName.Length > 8)
         {
-            RegistrationResult.InnerText += "The UserName has to contain between 3 to 8 charachters";
+            RegistrationResult.InnerText += "The UserName has to contain between 3 to 8 characters";
             return false;
         }
 
@@ -143,7 +143,7 @@ public partial class Registration : System.Web.UI.Page
 
         if (id.Length != 9)
         {
-            RegistrationResult.InnerText += "The ID number has to contain exactly 9 charachters.";
+            RegistrationResult.InnerText += "The ID number has to contain exactly 9 characters.";
             return false;
         }
         for (int i = 0; i < 9; i++)
@@ -172,7 +172,7 @@ public partial class Registration : System.Web.UI.Page
 
         if (Phone_num.Length != 10)
         {
-            RegistrationResult.InnerText += "The phone number has to contain exactly 10 charachters.";
+            RegistrationResult.InnerText += "The phone number has to contain exactly 10 characters.";
             return false;
         }
         for (int i = 0; i < 10; i++)
@@ -204,11 +204,17 @@ public partial class Registration : System.Web.UI.Page
         // במקרה שאחד התנאים לא מתקיים, הוסף הודעת שגיאה מתאימה והחזר:
         // return false;
         string Email = mail.Value;
+        int index_of_dot = -1;
+        for(int i = 0; i < Email.Length;i++)
+        {
+            if (Email[i] == '.')
+                index_of_dot = i;
+        }
         bool shtrudel = false;
         bool dot = false;
         if (Email.IndexOf('@') != -1)
             shtrudel = true;
-        if (Email.IndexOf('.') != -1)
+        if (index_of_dot != -1)
             dot = true;
         if (shtrudel == false)
         {
@@ -224,9 +230,14 @@ public partial class Registration : System.Web.UI.Page
             return false;
 
         }
+        if (Email.IndexOf('@') == 0 || index_of_dot == Email.Length-1 || index_of_dot == Email.IndexOf('@')+1 || Email.IndexOf('@')== Email.Length - 1)
+        {
+            RegistrationResult.InnerText += "Dot or Shtrudel not in the right place.";
+            return false;
+        }
         if (dot && shtrudel)
         {
-            if (Email.IndexOf('@') > Email.IndexOf('.'))
+            if (Email.IndexOf('@') > index_of_dot)
             {
                 RegistrationResult.InnerText += "The dot has to come after the @.";
                 return false;
@@ -257,7 +268,7 @@ public partial class Registration : System.Web.UI.Page
 
         if (dt.Rows.Count > 0)
         {
-            RegistrationResult.InnerText = "שם משתמש קיים במערכת. אנא בחר.י שם אחר.";
+            RegistrationResult.InnerText = "Username already exists in the system. Please choose another name.";
             return false;
         }
 

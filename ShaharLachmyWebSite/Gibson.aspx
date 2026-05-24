@@ -10,12 +10,14 @@
      <div class="GuitarRow">
     <div class="GuitarType">
      <h2>Les Paul</h2>
-     <a href="Les_Paul.aspx"> <img src="Images/Les_Paul.png" width="430"/>
+     <a href="Les_Paul.aspx"> 
+         <img id="lesPaulImage" src="Images/Les_Paul.png" width="430"/>
      </a>
 </div>
         <div class="GuitarType">
      <h2>SG</h2>
-     <a href="SG.aspx"> <img src="Images/SG.png" width="200"/>
+     <a href="SG.aspx"> 
+         <img id="sgImage" src="Images/SG.png" width="192"/>
      </a>
 </div>
          </div>

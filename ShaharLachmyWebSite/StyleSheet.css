@@ -1,91 +1,46 @@
-﻿html {
+﻿/* ייבוא פונט אלגנטי וקריא מ-Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+html {
     direction: ltr;
 }
 
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: #9ec7e6; /* רקע כללי לבן-תכלכל עדין מאוד */
+    color: #333333;
+}
+
+/* עיצוב כללי לאזורים המרכזיים - הסרת הגבולות הכחולים הצעקניים והוספת צלליות רכות */
 header, .center, footer {
     min-height: 80px;
-    border: 2px solid blue;
+    border: none;
+    border-radius: 8px; /* פינות מעוגלות */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* צללית אלגנטית */
+    margin-bottom: 20px;
 }
 
+/* --- אזור עליון (Header) --- */
 header {
-    background-color: white;
-    margin-bottom: 5px;
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
+    position: relative; /* מאפשר מיקום חופשי לתאריך */
+    padding-top: 15px;
 }
 
-.header_top {
-    min-height: 20px;
-    display: flex;
-    flex: 1;
-}
-
-
-
-.main_nav {
-    background-color: lightgray;
-    min-height: 30px;
-    padding-left: 100px;
-    padding-right: 100px;
-    display: flex;
-    align-items: center;
-}
-
-.main_nav .login_logout {
-    margin-right: auto;
-    border: 1px solid black;
-    padding: 5px;
-}
-
-
-    .main_nav a {
-        text-decoration: none;
-        font-size: 24px;
-        color: darkblue;
-        margin: 10px;
-    }
-
-
-.center {
-    background-color: lime;
-    margin-bottom: 5px;
-    display: flex;
-}
-
-main, aside {
-    min-height: 300px;
-}
-
-main {
-    background-color: darkblue;
-    flex: 4;
-    color: white;
-    padding: 5px 10px;
-}
-
-
-aside {
-    background-color: gray;
-    flex: 1;
-    padding: 5px;
-    text-align: center;
-}
-
-footer {
-    background-color: orange;
-}
-.GuitarRow {
-    display: flex;
-    justify-content: center;
-}
-
-.GuitarType {
-    text-align: center; 
-}
+/* מיקום התאריך בצד שמאל למעלה */
 .header_date {
-    flex: 1;
+    position: absolute;
+    top: 15px;
+    left: 20px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    color: #7f8c8d;
 }
 
 #DateLabel {
@@ -94,21 +49,166 @@ footer {
 
 #DayImage {
     flex: 3;
-    max-width: 60px;
+    max-width: 300px;
     height: auto;
+    margin-top: 5px;
 }
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 20px;
-    background-color: #f9f9f9;
+
+/* כותרת האתר */
+h1 {
+    text-align: center;
+    color: #5dade2; /* תכלת עדין ויוקרתי */
+    margin: 10px 0 5px 0;
+    font-size: 38px;
+    font-weight: 700;
 }
+
+/* לוגו האתר */
+.header_top {
+    min-height: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* --- תפריט ניווט --- */
+.main_nav {
+    background-color: #eaf2f8; /* תכלת מאוד בהיר */
+    min-height: 55px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 8px 8px; /* עיגול הפינות רק למטה */
+    flex-wrap: wrap;
+}
+
+/* כפתור התחברות/התנתקות */
+.main_nav .login_logout {
+    margin-right: auto; /* דוחף את שאר הקישורים לאמצע */
+    border: 2px solid #5dade2;
+    padding: 6px 18px;
+    border-radius: 25px; /* עיצוב בצורת גלולה */
+    background-color: #ffffff;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.main_nav .login_logout:hover {
+    background-color: #5dade2;
+    color: #ffffff;
+}
+
+/* קישורי התפריט */
+.main_nav a {
+    text-decoration: none;
+    font-size: 17px;
+    color: #2c3e50;
+    margin: 10px 18px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.main_nav a:hover {
+    color: #5dade2; /* שינוי צבע לתכלת במעבר עכבר */
+}
+
+/* --- אזור מרכזי ותוכן --- */
+.center {
+    background-color: transparent; /* הסרת הרקע הזרחני (lime) */
+    display: flex;
+    gap: 20px; /* רווח נקי בין התוכן לאזור הצדדי */
+    box-shadow: none; 
+}
+
+main, aside {
+    min-height: 300px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+main {
+    background-color: #ffffff;
+    flex: 4;
+    color: #333333;
+    padding: 30px;
+}
+
+aside {
+    background-color: #f0f8ff; /* רקע תכלת עדין במיוחד (AliceBlue) */
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    border-top: 4px solid #5dade2; /* פס עיטור עליון */
+}
+
+/* עיצוב הטקסט והתמונות באזור הצדדי (הפדאלים) */
+aside h2 {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+aside p {
+    font-size: 14px;
+    color: #555555;
+    margin-bottom: 5px;
+}
+
+aside img {
+    margin-bottom: 20px;
+    border-radius: 6px;
+    transition: transform 0.3s ease; /* הכנה לאפקט ההגדלה */
+}
+
+aside img:hover {
+    transform: scale(1.1); /* הפדאל "קופץ" קדימה במעבר עכבר */
+}
+
+/* --- אזור תחתון (Footer) --- */
+footer {
+    background-color: #eaf2f8; /* תואם לתפריט הניווט */
+    color: #2c3e50;
+    text-align: center;
+    padding: 20px;
+    font-weight: 600;
+}
+
+/* --- עיצובים נוספים מהקוד המקורי שלך (עברו שדרוג קל) --- */
+.GuitarRow {
+    display: flex;
+    justify-content: space-around; /* משתרע על פני הדף עם רווח שווה */
+}
+.GuitarRow {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* מוסיף רווח של 40 פיקסלים בין גיטרה לגיטרה */
+}
+
+.GuitarType {
+    text-align: center; 
+}
+
+.adminTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
 .adminTable tr:nth-child(even) {
-    background-color: lightgray;
+    background-color: #f4f8fb;
 }
 
 .adminTable, .adminTable th, .adminTable td {
-    border: 1px solid black;
+    border: 1px solid #d5dbdb;
+    padding: 12px;
+    text-align: left;
+}
+
+.adminTable th {
+    background-color: #5dade2;
+    color: white;
 }
 /* =========================================
    Quiz Styles (Default.aspx)
@@ -177,4 +277,102 @@ body {
 .about-section {
     margin-bottom: 20px;
     text-align: center;
+}
+/* אנימציית קפיצה (Hover) לגיטרות פנדר לפי ID */
+#stratImage, #teleImage, #jazzImage {
+    transition: transform 0.3s ease; /* מגדיר שהשינוי יקרה בצורה חלקה ולא במכה */
+}
+
+    #stratImage:hover, #teleImage:hover, #jazzImage:hover {
+        transform: scale(1.05); /* מגדיל את התמונה ב-5% כשהעכבר עליה */
+        cursor: pointer; /* מוודא שסמן העכבר הופך ליד לוחצת */
+    }
+/* אנימציית קפיצה (Hover) לגיטרות גיבסון לפי ID */
+#lesPaulImage, #sgImage {
+    transition: transform 0.3s ease; /* אנימציה חלקה */
+}
+
+    #lesPaulImage:hover, #sgImage:hover {
+        transform: scale(1.05); /* הגדלה של הגיטרה ב-5% */
+        cursor: pointer; /* סמן של יד לוחצת */
+    }
+/* --- עיצוב טופס התחברות והרשמה --- */
+
+/* עיצוב כותרות השדה (Userame, Password) */
+main label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+/* עיצוב תיבות הקלט (הטקסט והסיסמה) */
+main input[type="text"],
+main input[type="password"] {
+    width: 100%;
+    max-width: 280px; /* מגביל את הרוחב כדי שלא יימתחו על כל המסך */
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border: 2px solid #aec6cf; /* גבול תכלת עדין */
+    border-radius: 6px; /* פינות מעוגלות בעדינות */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    background-color: #ffffff;
+    color: #333333;
+    box-sizing: border-box;
+    transition: all 0.3s ease; /* מעבר חלק בשינוי צבע */
+}
+
+    /* אפקט בזמן לחיצה/פוקוס על תיבת הטקסט */
+    main input[type="text"]:focus,
+    main input[type="password"]:focus {
+        border-color: #3498db; /* הגבול הופך לכחול מודגש */
+        box-shadow: 0 0 8px rgba(52, 152, 219, 0.2); /* הילה כחולה עדינה מסביב */
+        outline: none;
+    }
+
+/* עיצוב כפתורי ה-Submit (גם של ההתחברות וגם של ההרשמה) */
+main input[type="submit"] {
+    background-color: #3498db; /* כפתור כחול */
+    color: #ffffff; /* טקסט לבן */
+    border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 25px; /* כפתור עגול ואלגנטי, דומה לכפתור ה-Login בתפריט */
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+    /* אפקט מעבר עכבר על הכפתורים */
+    main input[type="submit"]:hover {
+        background-color: #2980b9; /* כחול קצת יותר כהה */
+        transform: translateY(-2px); /* הכפתור "צף" קצת למעלה */
+        box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* אפקט בזמן לחיצה ממשית על הכפתור */
+    main input[type="submit"]:active {
+        transform: translateY(0); /* הכפתור חוזר למקומו */
+    }
+/* --- עיצוב כפתורי רדיו (מין) ותיבות סימון (תקנון) --- */
+
+main input[type="radio"],
+main input[type="checkbox"] {
+    accent-color: #3498db; /* משנה את צבע הבחירה וה-V לכחול האלגנטי של האתר */
+    transform: scale(1.25); /* הגדלה של הכפתורים ב-25% כדי שיהיו ברורים ונוחים ללחיצה */
+    margin-right: 8px; /* רווח נקי בין הכפתור או התיבה לבין הטקסט שבא אחריהם */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer; /* הופך את העכבר ליד לוחצת במעבר עליהם */
+    vertical-align: middle; /* מיישר את הכפתור בדיוק לאמצע הגובה של הטקסט לידו */
+}
+
+/* עיצוב משלים לטקסט החופשי בתוך הטופס (כמו שמות המינים והאישור) */
+main form {
+    color: #2c3e50; /* צבע כחול-כהה עדין לכל הטקסט בטופס */
+    font-size: 16px;
 }

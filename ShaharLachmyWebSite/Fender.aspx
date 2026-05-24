@@ -10,21 +10,25 @@
     <div class="GuitarRow">
         <div class="GuitarType">
              <h2>The Stratocaster</h2>
-             <a href="strat.aspx"> <img src="Images/Strat.png" width="430"/>
+             <a href="strat.aspx"> 
+                 <img id="stratImage" src="Images/Strat.png" width="430"/>
              </a>
         </div>
     
          <div class="GuitarType">
              <h2>The Telecaster</h2>
-               <a href="tele.aspx"> <img src="Images/Tele.png" width="460"/> </a>
+               <a href="tele.aspx"> 
+                   <img id="teleImage" src="Images/Tele.png" width="460"/> 
+               </a>
         </div>
 
          <div class="GuitarType">
             <h2>The Jazzmaster</h2>
-             <a href="jazz.aspx">  <img src="Images/Jazzmaster.png" width="300"/> </a>
+             <a href="jazz.aspx">  
+                 <img id="jazzImage" src="Images/Jazzmaster.png" width="300"/> 
+             </a>
         </div>
     </div>
-
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderFooter" runat="Server">
     <p><strong>Guitar Tip:</strong> Always tune your guitar before you start playing!</p>
